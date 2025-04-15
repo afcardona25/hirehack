@@ -1,0 +1,4 @@
+Flask>=2.0
+python-dotenv>=0.19
+openai>=1.0  # Add this if using the real OpenAI API
+requests     # Useful for general HTTP requests if needed later
