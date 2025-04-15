@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireHack - Rewrite Your CV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>HireHack CV Rewriter</h1>
+        <p>Paste your CV sections and the job description to get a tailored version.</p>
+
+        <form id="cv-form">
+            <h2>Your CV Details</h2>
+            <div class="form-group">
+                <label for="summary">Professional Summary:</label>
+                <textarea id="summary" name="summary" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="experience1">Experience 1 (Most Recent):</label>
+                <textarea id="experience1" name="experience1" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="experience2">Experience 2:</label>
+                <textarea id="experience2" name="experience2" rows="6"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="education">Education:</label>
+                <textarea id="education" name="education" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <textarea id="skills" name="skills" rows="3" required></textarea>
+            </div>
+             <div class="form-group">
+                <label for="languages">Languages and Proficiency:</label>
+                <textarea id="languages" name="languages" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="additional">Additional Sections (Optional):</label>
+                <textarea id="additional" name="additional" rows="3"></textarea>
+            </div>
+
+            <h2>Job Details</h2>
+             <div class="form-group">
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+             <div class="form-group">
+                <label for="industry">Industry:</label>
+                <input type="text" id="industry" name="industry">
+            </div>
+            <div class="form-group">
+                <label for="job_description">Job Description:</label>
+                <textarea id="job_description" name="job_description" rows="10" required></textarea>
+            </div>
+
+            <h2>Options</h2>
+             <div class="form-group">
+                <label for="tone">Tone:</label>
+                <select id="tone" name="tone">
+                    <option value="Keep original style">Keep original style</option>
+                    <option value="Adapt to job offer tone">Adapt to job offer tone</option>
+                </select>
+            </div>
+
+            <button type="submit" id="rewrite-button">Rewrite CV</button>
+            <div id="loading-indicator" style="display: none; margin-top: 10px;">Processing... Please wait.</div>
+            <div id="error-message" style="display: none; color: red; margin-top: 10px;"></div>
+        </form>
+
+        <div id="result-container" style="display: none;">
+            <h2>Rewritten CV</h2>
+            <pre id="rewritten-cv"></pre>
+            <div class="result-actions">
+                <button id="copy-button">Copy to Clipboard</button>
+                <button id="download-button">Download as .txt</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
