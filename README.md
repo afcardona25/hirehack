@@ -9,14 +9,14 @@ This is the MVP of **HireHack**, a tool that rewrites a candidate's CV to match 
 hirehack-mvp/
 ├── backend/
 │   ├── app.py              # Flask backend
-│   ├── requirements.txt    # Python dependencies
 │   └── .env                # API keys and config (ignored in git)
 ├── frontend/
 │   ├── index.html          # Main interface
 │   └── static/
 │       ├── style.css       # Styles
 │       └── script.js       # JavaScript logic
-└── venv/                   # Virtual environment (optional, not committed)
+├── venv/                   # Virtual environment (optional, not committed)
+└── requirements.txt    # Python dependencies
 ```
 
 ---
